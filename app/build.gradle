@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.vikram.MyNotes"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.legacy
+
+    implementation deps.constraintLayout
+    // Kotlin
+    implementation deps.kotlinsdk
+
+    // Android Support Libs
+    implementation deps.appcompatv7
+    implementation deps.design
+    implementation deps.cardview
+
+    // Play Services
+    implementation deps.location
+
+    // Dagger 2
+    implementation deps.dagger
+    implementation deps.daggerSupport
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    kapt deps.daggerCompiler
+    kapt deps.daggerProcessor
+    kaptTest deps.daggerProcessor
+    kaptTest deps.daggerCompiler
+    kaptAndroidTest deps.daggerCompiler
+
+    // Retrofit 2
+    implementation deps.retrofit
+    implementation deps.retrofitgson
+    implementation deps.retrofitrx
+    implementation deps.okhttplogger
+    // Rx
+    implementation deps.rxjava2
+    implementation deps.rxandroid2
+
+    // Glide
+    implementation deps.glide
+    kapt deps.glideCompiler
+
+    //Shimmer
+    implementation deps.shimmer
+
+    //architecture
+    implementation deps.archExtenstion
+    implementation deps.archViewmmodel
+    implementation deps.archLivdata
+    implementation deps.androidKtx
+    implementation deps.navigationFragment
+    implementation deps.navigationKtx
+
+    testImplementation deps.archTest
+
+    kapt deps.archCompiler
+    // UI Testing
+    androidTestImplementation(deps.espressocore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // Unit Testing
+    testImplementation deps.junit
+    testImplementation deps.mockitocore
+    testImplementation deps.mockWebServer
+    testImplementation deps.test_runner
+
+    androidTestImplementation deps.test_core
+    androidTestImplementation deps.test_runner
+    androidTestImplementation deps.test_rules
+
+    implementation deps.coroutineCore
+    implementation deps.coroutineAndroid
+}

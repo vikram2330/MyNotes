@@ -1,0 +1,125 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    MIN_SDK_VERSION = 19
+    TARGET_SDK_VERSION = 29
+    COMPILE_SDK_VERSION = 29
+    BUILD_TOOLS_VERSION = '28.0.3'
+
+    SUPPORT_LIB_VERSION = '27.1.1'
+
+    RETROFIT_VERSION = '2.6.0'
+    OKHTTP_VERSION = '3.12.0'
+    DAGGER_VERSION = '2.16'
+    RX_VERSION = '2.1.10'
+    RX_ANDROID_VERSION = '2.0.2'
+    ARCH_VERSION = '1.1.0'
+    COROUTINE_VERSION = '1.2.1'
+    DATA_BINDING = '2.3.3'
+    JETPACK = '1.0.2'
+    CONSTRAINT_LAYOUT = '1.1.3'
+    KTX = '1.0.2'
+    CARD_VIEW = '1.0.0'
+    LIFECYCLE_VERSION = '2.0.0'
+    LEGACY = '1.0.0'
+    LOCATION = '17.0.0'
+    GLIDE = '4.10.0'
+    MATERIAL = '1.0.0'
+    SHIMMER = '0.5.0'
+
+    JUNIT4 = '4.12'
+    TEST_RUNNER = '1.1.0'
+    TEST_CORE = '1.0.0'
+    ESPRESSO = '3.1.1'
+    MOCKITO = '2.1.0'
+    MOCK_WEB_SERVER = '4.2.1'
+    TRUTH = '0.32'
+    NAV_VERSION = '2.1.0'
+
+}
+ext.deps = [archExtenstion     : "androidx.lifecycle:lifecycle-extensions:${LIFECYCLE_VERSION}",
+            archViewmmodel     : "androidx.lifecycle:lifecycle-viewmodel:${LIFECYCLE_VERSION}",
+            archLivdata        : "androidx.lifecycle:lifecycle-livedata:${LIFECYCLE_VERSION}",
+            archCompiler       : "androidx.lifecycle:lifecycle-compiler:${LIFECYCLE_VERSION}",
+            archTest           : "androidx.arch.core:core-testing:${LIFECYCLE_VERSION}",
+            androidKtx         : "androidx.core:core-ktx:${KTX}",
+
+
+            rxjava2            : "io.reactivex.rxjava2:rxjava:$RX_VERSION",
+            rxandroid2         : "io.reactivex.rxjava2:rxandroid:${RX_ANDROID_VERSION}",
+
+            kotlinsdk          : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+
+            databinding        : "com.android.databinding:compiler:${DATA_BINDING}",
+
+            constraintLayout   : "androidx.constraintlayout:constraintlayout:${CONSTRAINT_LAYOUT}",
+
+            supportannotations : "com.android.support:support-annotations:${SUPPORT_LIB_VERSION}",
+            appcompatv7        : "androidx.appcompat:appcompat:${JETPACK}",
+            supportv13         : "com.android.support:support-v13:${SUPPORT_LIB_VERSION}",
+            design             : "com.google.android.material:material:${MATERIAL}",
+            cardview           : "androidx.cardview:cardview:${CARD_VIEW}",
+            legacy             : "androidx.legacy:legacy-support-v4:${LEGACY}",
+            navigationFragment : "androidx.navigation:navigation-fragment-ktx:${NAV_VERSION}",
+            navigationKtx      : "androidx.navigation:navigation-ui-ktx:${NAV_VERSION}",
+
+
+            retrofit           : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}",
+            retrofitgson       : "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}",
+            retrofitrx         : "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}",
+
+            okhttp             : "com.squareup.okhttp3:okhttp:${OKHTTP_VERSION}",
+            okhttplogger       : "com.squareup.okhttp3:logging-interceptor:${OKHTTP_VERSION}",
+
+            dagger             : "com.google.dagger:dagger:${DAGGER_VERSION}",
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${DAGGER_VERSION}",
+            daggerSupport      : "com.google.dagger:dagger-android-support:${DAGGER_VERSION}",
+            daggerProcessor    : "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}",
+
+            glide              : "com.github.bumptech.glide:glide:${GLIDE}",
+            glideCompiler      : "com.github.bumptech.glide:compiler:${GLIDE}",
+
+            location           : "com.google.android.gms:play-services-location:${LOCATION}",
+
+            junit              : "junit:junit:${JUNIT4}",
+
+            truth              : "com.google.truth:truth:${TRUTH}",
+            espressocore       : "androidx.test.espresso:espresso-core:${ESPRESSO}",
+            mockitocore        : "org.mockito:mockito-core:${MOCKITO}",
+            mockWebServer      : "com.squareup.okhttp3:mockwebserver:${MOCK_WEB_SERVER}",
+            test_core          : "androidx.test:core:${TEST_CORE}",
+            test_rules         : "androidx.test:rules:${TEST_RUNNER}",
+            test_runner        : "androidx.test:runner:${TEST_RUNNER}",
+
+            coroutineCore      : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${COROUTINE_VERSION}",
+            coroutineAndroid   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINE_VERSION}",
+
+            shimmer            : "com.facebook.shimmer:shimmer:${SHIMMER}"
+
+]

@@ -1,0 +1,101 @@
+def versions = ['minSdkVersion': 23,
+    'targetSdkVersion': 29,
+    'compileSdkVersion': 28,
+    'buildToolVersion': '29.0.1',
+    'kotlinVersion': '1.3.50',
+    'retrofitVersion': '2.6.1',
+    'okHttpVersion': '4.2.1',
+    'coroutinesVersion': '1.3.0',
+    'daggerVersion': '2.25.2',
+    'archVersion': '1.1.0',
+    'roomVersion': '2.2.0-rc01',
+    'navigation': '2.1.0',
+    'lifecycleVersion': '2.1.0',
+    'firebaseAnalytics': '17.2.0',
+    'crashlytics': '2.10.1',
+    'firebasePerformance': '19.0.0',
+    'espressoVersion': '3.1.0',
+    'locationPlayServices': "17.0.0",
+    'dokkaVersion': "0.10.0",
+    'workManager': '2.2.0',
+    'viewPager2': "1.0.0",
+    'mockitoKotlin': "2.2.0",
+    'coroutinesTest': '1.3.2',
+    'roboelectric': '4.3']
+
+// Make versions an extra property
+ext.versions = versions
+ext.deps = [
+    androidx: [
+        legacy: 'androidx.legacy:legacy-support-v4:1.0.0',
+        appcompat: 'androidx.appcompat:appcompat:1.0.2',
+        constraintlayout: 'androidx.constraintlayout:constraintlayout:1.1.3',
+        lifecycle: [
+            extentions: "android.arch.lifecycle:extensions:${versions.lifecycleVersion}",
+            viewmodel: "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycleVersion}",
+            livedata: "androidx.lifecycle:lifecycle-livedata:${versions.lifecycleVersion}",
+            compiler: "androidx.lifecycle:lifecycle-compiler:${versions.lifecycleVersion}"
+        ],
+        "room": "androidx.room:room-runtime:${versions.roomVersion}",
+        "roomCompiler": "androidx.room:room-compiler:${versions.roomVersion}",
+        "roomCoroutines": "androidx.room:room-ktx:${versions.roomVersion}",
+        "ktx": "androidx.core:core-ktx:1.0.2",
+        navigation: [
+            runtime_ktx: "androidx.navigation:navigation-runtime-ktx:$versions.navigation",
+            fragment_ktx: "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
+            ui_ktx: "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+        ],
+        "workManager": "androidx.work:work-runtime-ktx:${versions.workManager}",
+        "workTesting": "androidx.work:work-testing:${versions.workManager}",
+        "viewPager2": "androidx.viewpager2:viewpager2:${versions.viewPager2}"
+    ],
+    playServices: [
+        location: "com.google.android.gms:play-services-location:${versions.locationPlayServices}"
+    ],
+    firebase: [
+        analytics: "com.google.firebase:firebase-analytics:$versions.firebaseAnalytics",
+        crashlytics: "com.crashlytics.sdk.android:crashlytics:$versions.crashlytics",
+        performance: "com.google.firebase:firebase-perf:$versions.firebasePerformance"
+    ],
+    kotlin: [
+        kotlinSDK: "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlinVersion}",
+    ],
+    dagger: [
+        dagger: "com.google.dagger:dagger:${versions.daggerVersion}",
+        daggerCompiler: "com.google.dagger:dagger-compiler:${versions.daggerVersion}",
+        daggerSupport: "com.google.dagger:dagger-android-support:${versions.daggerVersion}",
+        daggerProcessor: "com.google.dagger:dagger-android-processor:${versions.daggerVersion}",
+    ],
+    "coroutines": [
+        "core": "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutinesVersion}",
+        "android": "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutinesVersion}"
+    ],
+    network: [
+        retrofit: "com.squareup.retrofit2:retrofit:${versions.retrofitVersion}",
+        retrofitgson: "com.squareup.retrofit2:converter-gson:${versions.retrofitVersion}",
+        retrofitrx: "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofitVersion}",
+        okhttp: "com.squareup.okhttp3:okhttp:${versions.okHttpVersion}",
+        okhttplogger: "com.squareup.okhttp3:logging-interceptor:${versions.okHttpVersion}",
+    ],
+    logger: [
+        timber: 'com.jakewharton.timber:timber:4.5.1'
+    ],
+    design: [
+        material: 'com.google.android.material:material:1.1.0-alpha09'
+    ],
+    test: [
+        junit: 'junit:junit:4.12',
+        truth: 'com.google.truth:truth:0.32',
+        espressocore: "androidx.test.espresso:espresso-core:${versions.espressoVersion}",
+        espressorunner: 'androidx.test:runner:1.1.0',
+        espressorules: 'androidx.test:rules:1.1.0',
+        espressoContrib: "androidx.test.espresso:espresso-contrib:${versions.espressoVersion}",
+        mockitocore: 'org.mockito:mockito-core:2.23.4',
+        mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockitoKotlin}",
+        coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutinesTest}",
+        roboelectric: "org.robolectric:robolectric:${versions.roboelectric}",
+        junitExt: 'androidx.test.ext:junit:1.1.1',
+        archTesting: "androidx.arch.core:core-testing:2.1.0",
+        mockWebServer:"com.squareup.okhttp3:mockwebserver:${versions.okHttpVersion}"
+    ]
+]
