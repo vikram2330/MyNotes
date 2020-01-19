@@ -41,4 +41,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    // Unit Testing
+    testImplementation deps.truth
+    testImplementation deps.espressocore
+    testImplementation deps.test_core
+    testImplementation deps.test_rules
+    testImplementation deps.test_runner
+    testImplementation deps.mockitocore
+    testImplementation deps.archTest
+    testImplementation deps.junit
+    testImplementation deps.robo_electric
+
 }
