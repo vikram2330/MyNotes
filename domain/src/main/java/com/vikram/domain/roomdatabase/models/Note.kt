@@ -5,11 +5,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = Note.NOTE)
 data class Note(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
     val title: String,
-    val content: String
+    val content: String,
+    val date : Long
 ) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+
     companion object {
         const val NOTE = "note_table"
     }
