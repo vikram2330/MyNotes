@@ -101,4 +101,5 @@ dependencies {
 
     implementation deps.coroutineCore
     implementation deps.coroutineAndroid
+    implementation project(path: ':domain')
 }
