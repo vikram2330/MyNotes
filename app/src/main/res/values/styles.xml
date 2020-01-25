@@ -7,5 +7,18 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="Text">
+        <item name="android:textColor">@color/darkGrey</item>
+    </style>
+    <style name="Text.TitleSmall">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.TitleMedium">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Text.TitleLarge">
+    <item name="android:textSize">20sp</item>
+    </style>
 
 </resources>

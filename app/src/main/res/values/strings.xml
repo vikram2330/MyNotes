@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">My Notes</string>
+    <string name="title_notes">Notes</string>
+    <string name="save_a_note_and_it_will_show_up_here">Save a note and it will show up here.</string>
+    <string name="no_notes_added_yet">No notes added yet</string>
 </resources>

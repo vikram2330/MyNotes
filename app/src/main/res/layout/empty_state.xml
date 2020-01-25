@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/empty_state_image_width"
+            android:layout_height="@dimen/empty_state_image_height"
+            android:src="@drawable/ic_note_add" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_notes_added_yet"
+            android:textColor="@color/hint_grey"
+            style="@style/Text.TitleLarge"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/Text.TitleMedium"
+            android:textColor="@color/hint_grey"
+            android:text="@string/save_a_note_and_it_will_show_up_here"
+            />
+    </LinearLayout>
+</layout>
