@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_item_note">
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/Text.TitleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            tools:text="21 oct 2001"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/Text.TitleMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textStyle="bold"
+            tools:text="Test"
+            android:layout_marginTop="@dimen/title_margin_top_item_note"
+            android:layout_marginBottom="@dimen/title_margin_bottom_item_note"
+            />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/Text.TitleMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            tools:text="test note \n in \n 3 lines."/>
+    </LinearLayout>
+</layout>

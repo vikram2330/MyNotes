@@ -8,7 +8,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -32,7 +32,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
 
-    implementation deps.room
+    api deps.room
     kapt deps.room_compiler
     implementation deps.room_coroutines
     testImplementation deps.room_test

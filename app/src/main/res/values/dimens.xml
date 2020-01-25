@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="empty_state_image_width">120dp</dimen>
+    <dimen name="empty_state_image_height">120dp</dimen>
+    <dimen name="padding_item_note">8dp</dimen>
+    <dimen name="title_margin_top_item_note">4dp</dimen>
+    <dimen name="title_margin_bottom_item_note">2dp</dimen>
+</resources>

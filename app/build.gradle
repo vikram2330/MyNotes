@@ -16,6 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -94,6 +95,10 @@ dependencies {
     testImplementation deps.mockitocore
     testImplementation deps.mockWebServer
     testImplementation deps.test_runner
+    testImplementation deps.test_core
+    testImplementation deps.test_runner
+    testImplementation deps.test_rules
+    testImplementation deps.robo_electric
 
     androidTestImplementation deps.test_core
     androidTestImplementation deps.test_runner
@@ -101,4 +106,5 @@ dependencies {
 
     implementation deps.coroutineCore
     implementation deps.coroutineAndroid
+    implementation project(path: ':domain')
 }

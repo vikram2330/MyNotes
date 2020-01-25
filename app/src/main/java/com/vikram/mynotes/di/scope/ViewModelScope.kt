@@ -1,4 +1,4 @@
-package com.vikram.trendingrepos.di.scope
+package com.vikram.mynotes.di.scope
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
