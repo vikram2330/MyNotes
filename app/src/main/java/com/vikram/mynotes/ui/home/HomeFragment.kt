@@ -12,6 +12,7 @@ import com.vikram.mynotes.MyNotesApp
 import com.vikram.mynotes.R
 import com.vikram.mynotes.databinding.FragmentHomeBinding
 import com.vikram.mynotes.ui.base.BaseFragment
+import com.vikram.mynotes.ui.shownote.DisplayNoteFragment
 import com.vikram.mynotes.util.setClickListener
 import com.vikram.mynotes.util.setDivider
 
@@ -66,6 +67,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                     binding.swipeRefresh.isRefreshing = loading
                 }
             })
+        notesAdapter.onItemSelected = {
+            val data = DisplayNoteFragment.getBundle(it)
+            findNavController().navigate(R.id.action_homeFragment_to_displayNoteFragment,data)
+        }
     }
 
 }

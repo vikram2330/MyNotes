@@ -12,6 +12,7 @@ import com.vikram.mynotes.util.toDate
 class NotesListAdapter() : RecyclerView.Adapter<NotesListAdapter.NoteItemViewHolder>() {
 
     private val noteList: MutableList<Note> = mutableListOf()
+    var onItemSelected : ((id:Long)->Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteItemViewHolder {
         val binding = ItemNoteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -22,6 +23,9 @@ class NotesListAdapter() : RecyclerView.Adapter<NotesListAdapter.NoteItemViewHol
 
     override fun onBindViewHolder(holder: NoteItemViewHolder, position: Int) {
         holder.bindData(noteList[position])
+        holder.itemView.setOnClickListener {
+         onItemSelected?.invoke(noteList[position].id)
+        }
     }
 
     fun updateNotesList(noteList: List<Note>) {

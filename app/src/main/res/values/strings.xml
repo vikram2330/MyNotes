@@ -7,4 +7,6 @@
     <string name="label_title">Title</string>
     <string name="label_save">Save</string>
     <string name="title_add_note">Add Note</string>
+    <string name="template_created_at">Created at %1$s</string>
+    <string name="title_note">Note</string>
 </resources>

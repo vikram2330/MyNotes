@@ -6,6 +6,7 @@ import com.vikram.mynotes.di.modules.RepositoryModule
 import com.vikram.mynotes.di.modules.ViewModelModule
 import com.vikram.mynotes.ui.addnote.AddNoteFragment
 import com.vikram.mynotes.ui.home.HomeFragment
+import com.vikram.mynotes.ui.shownote.DisplayNoteFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -14,4 +15,5 @@ import javax.inject.Singleton
 interface ApplicationComponent {
     fun inject(homeFragment: HomeFragment)
     fun inject(addNoteFragment: AddNoteFragment)
+    fun inject(displayNoteFragment: DisplayNoteFragment)
 }

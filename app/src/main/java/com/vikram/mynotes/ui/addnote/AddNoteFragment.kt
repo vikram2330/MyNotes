@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.vikram.mynotes.MyNotesApp
 import com.vikram.mynotes.R
 import com.vikram.mynotes.databinding.FragmentAddNoteBinding
 import com.vikram.mynotes.ui.base.BaseFragment
+import com.vikram.mynotes.ui.shownote.DisplayNoteFragment
 import com.vikram.mynotes.util.setClickListener
 import kotlinx.android.synthetic.main.fragment_add_note.*
 
@@ -44,12 +46,12 @@ class AddNoteFragment : BaseFragment<AddNoteViewModel, FragmentAddNoteBinding>()
 
     private fun initListeners() {
         viewModel.getStateLiveDate().observe(this, Observer {
-            it?.let {
-                when(it){
+            it?.let {state ->
+                when(state){
                     is AddNoteState.Loading -> { binding.progressCircular.visibility = View.VISIBLE}
-                    is AddNoteState.Successfull -> {
+                    is AddNoteState.Successful -> {
                         binding.progressCircular.visibility = View.GONE
-                        //todo: launch preview note screen
+                        onNoteSaved(state.noteid)
                     }
                 }
             }
@@ -59,6 +61,10 @@ class AddNoteFragment : BaseFragment<AddNoteViewModel, FragmentAddNoteBinding>()
         }
     }
 
+    private fun onNoteSaved(id:Long){
+       val data = DisplayNoteFragment.getBundle(id)
+        findNavController().navigate(R.id.action_addNoteFragment_to_displayNoteFragment,data)
+    }
     private val textWatcher = object: TextWatcher{
         override fun afterTextChanged(p0: Editable?) {
             validateEmptyTexts()

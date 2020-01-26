@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
@@ -12,11 +13,23 @@
             android:id="@+id/action_homeFragment_to_addNoteFragment"
             app:destination="@id/addNoteFragment"
             app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_displayNoteFragment"
+            app:destination="@id/displayNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.vikram.mynotes.ui.addnote.AddNoteFragment"
         android:label="@string/title_add_note"
-        />
+        >
+        <action
+            android:id="@+id/action_addNoteFragment_to_displayNoteFragment"
+            app:destination="@id/displayNoteFragment"
+            app:popUpTo="@+id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayNoteFragment"
+        android:name="com.vikram.mynotes.ui.shownote.DisplayNoteFragment"
+        android:label="@string/title_note" />
 
 </navigation>

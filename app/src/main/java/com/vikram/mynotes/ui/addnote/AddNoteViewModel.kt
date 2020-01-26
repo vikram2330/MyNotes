@@ -20,12 +20,12 @@ class AddNoteViewModel @Inject constructor(private val addNoteUseCase: AddNoteUs
         viewModelScope.launch {
             val note = Note(title, content, System.currentTimeMillis())
             val noteId = addNoteUseCase.perform(note)
-            stateLiveData.postValue(AddNoteState.Successfull(noteId))
+            stateLiveData.postValue(AddNoteState.Successful(noteId))
         }
     }
 }
 
 sealed class AddNoteState {
     object Loading : AddNoteState()
-    class Successfull(noteid: Long) : AddNoteState()
+    class Successful(val noteid: Long) : AddNoteState()
 }
