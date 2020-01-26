@@ -14,6 +14,7 @@ import javax.inject.Singleton
 interface TestComponent {
 fun inject(addNoteUseCaseTest: AddNoteUseCaseTest)
 fun inject(getSavedNotesUseCaseTest: GetSavedNotesUseCaseTest)
+fun inject(getNoteByIdUseCaseTest: GetNoteByIdUseCaseTest)
 }
 
 @Module

@@ -28,4 +28,13 @@ class NoteDaoTest : BaseDaoTest() {
         }
     }
 
+    @Test
+    fun getNoteById(){
+        runBlocking {
+            val listofIds = noteDao.addMultipleNotes(notesData.notes)
+            val note = noteDao.getNoteWithId(listofIds.first())
+            Truth.assertThat(note.id == listofIds.first())
+        }
+    }
+
 }

@@ -7,10 +7,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.vikram.mynotes.util.AppConstants.CLICK_DEBOUNCE_DURATION
+import com.vikram.mynotes.util.AppConstants.DD_MM_YY
 import java.text.SimpleDateFormat
 import java.util.*
 
-fun Long.toDate(format: String = "dd/MM/yy"): String {
+fun Long.toDate(format: String = DD_MM_YY): String {
     val calendar = Calendar.getInstance()
     calendar.timeInMillis = this
     val simpleDateFormat = SimpleDateFormat(format)

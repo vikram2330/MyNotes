@@ -6,6 +6,7 @@ import com.vikram.mynotes.ui.home.HomeViewModel
 import com.vikram.mynotes.util.ViewModelFactory
 import com.vikram.mynotes.di.scope.ViewModelScope
 import com.vikram.mynotes.ui.addnote.AddNoteViewModel
+import com.vikram.mynotes.ui.shownote.DisplayNoteViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -22,6 +23,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelScope(AddNoteViewModel::class)
     abstract fun bindAddNoteViewModel(addNoteViewModel: AddNoteViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelScope(DisplayNoteViewModel::class)
+    abstract fun bindDisplayNoteViewModel(displayNoteViewModel: DisplayNoteViewModel): ViewModel
 
     @Binds
     internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

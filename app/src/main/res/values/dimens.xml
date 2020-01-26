@@ -14,4 +14,6 @@
     <dimen name="height_progress_add_note_screen">24dp</dimen>
     <dimen name="btn_corner_radius">4dp</dimen>
     <dimen name="size_0dp">0dp</dimen>
+    <dimen name="padding_fragment_display_note">8dp</dimen>
+    <dimen name="padding_time_text_display_note_fragment">8dp</dimen>
 </resources>
