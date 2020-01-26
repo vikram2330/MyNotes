@@ -12,7 +12,7 @@ interface NoteDao {
     suspend fun getAllNotes(): List<Note>
 
     @Query("SELECT * FROM ${Note.NOTE} WHERE id = :id")
-    suspend fun getNotewithId(id: Long): Note
+    suspend fun getNoteWithId(id: Long): Note
 
     /**
      * Add the note to data base
