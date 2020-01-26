@@ -9,8 +9,8 @@ class NotesRepositoryImpl(private val dao: NoteDao) : NotesRepository {
         return dao.getAllNotes()
     }
 
-    override suspend fun saveNote(note: Note) {
-        dao.addNote(note)
+    override suspend fun saveNote(note: Note): Long {
+        return dao.addNote(note)
     }
 
 

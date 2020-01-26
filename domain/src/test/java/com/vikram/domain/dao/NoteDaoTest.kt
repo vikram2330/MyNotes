@@ -22,9 +22,9 @@ class NoteDaoTest : BaseDaoTest() {
     @Test
     fun getNotes(){
         runBlocking {
-            noteDao.addMultipleNotes(notesData.notes)
+            val listofIds = noteDao.addMultipleNotes(notesData.notes)
             val notes = noteDao.getAllNotes()
-            Truth.assertThat(notes.first().title == "test note 1")
+            Truth.assertThat(notes.first().id == listofIds.first())
         }
     }
 

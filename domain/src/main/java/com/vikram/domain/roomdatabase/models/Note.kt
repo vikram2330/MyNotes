@@ -10,7 +10,7 @@ data class Note(
     val date : Long
 ) {
     @PrimaryKey(autoGenerate = true)
-    var id: Int = 0
+    var id: Long = 0
 
     companion object {
         const val NOTE = "note_table"

@@ -6,4 +6,12 @@
     <dimen name="padding_item_note">8dp</dimen>
     <dimen name="title_margin_top_item_note">4dp</dimen>
     <dimen name="title_margin_bottom_item_note">2dp</dimen>
+    <dimen name="padding_add_note_screen">16dp</dimen>
+    <dimen name="margin_top_content_add_note_screen">16dp</dimen>
+    <dimen name="margin_top_save_btn_add_note_screen">24dp</dimen>
+    <dimen name="margin_following_progress_bar_add_note">16dp</dimen>
+    <dimen name="width_progress_add_note_screen">24dp</dimen>
+    <dimen name="height_progress_add_note_screen">24dp</dimen>
+    <dimen name="btn_corner_radius">4dp</dimen>
+    <dimen name="size_0dp">0dp</dimen>
 </resources>
