@@ -4,6 +4,7 @@ import android.os.Build
 import com.google.common.truth.Truth
 import com.vikram.domain.roomdatabase.dao.NoteDao
 import com.vikram.domain.util.DataUtils
+import com.vikram.domain.util.DataUtils.NoteData.notes
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -25,6 +26,15 @@ class NoteDaoTest : BaseDaoTest() {
             val listofIds = noteDao.addMultipleNotes(notesData.notes)
             val notes = noteDao.getAllNotes()
             Truth.assertThat(notes.first().id == listofIds.first())
+        }
+    }
+
+    @Test
+    fun getNoteById(){
+        runBlocking {
+            val listofIds = noteDao.addMultipleNotes(notesData.notes)
+            val note = noteDao.getNotewithId(listofIds.first())
+            Truth.assertThat(note.id == listofIds.first())
         }
     }
 

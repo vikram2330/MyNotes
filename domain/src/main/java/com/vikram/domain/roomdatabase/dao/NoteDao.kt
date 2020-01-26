@@ -11,6 +11,9 @@ interface NoteDao {
     @Query("SELECT * FROM ${Note.NOTE}")
     suspend fun getAllNotes(): List<Note>
 
+    @Query("SELECT * FROM ${Note.NOTE} WHERE id = :id")
+    suspend fun getNotewithId(id: Long): Note
+
     /**
      * Add the note to data base
      *and will return its id.
@@ -28,5 +31,5 @@ interface NoteDao {
      * @return
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addMultipleNotes(notes: List<Note>):List<Long>
+    suspend fun addMultipleNotes(notes: List<Note>): List<Long>
 }
