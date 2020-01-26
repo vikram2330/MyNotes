@@ -20,5 +20,7 @@
     <style name="Text.TitleLarge">
     <item name="android:textSize">20sp</item>
     </style>
-
+    <style name="ProgressBarTheme" parent="AppTheme">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
 </resources>

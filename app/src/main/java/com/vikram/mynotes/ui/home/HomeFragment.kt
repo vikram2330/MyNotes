@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vikram.mynotes.MyNotesApp
@@ -54,7 +55,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
             notesAdapter.updateNotesList(it)
         })
         binding.btnAddNote.setClickListener{
-            //todo: call add note fragment from here
+            findNavController().navigate(R.id.action_homeFragment_to_addNoteFragment)
         }
         binding.swipeRefresh.setOnRefreshListener {
             viewModel.getAllNotes()

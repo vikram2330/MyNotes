@@ -1,7 +1,6 @@
 package com.vikram.mynotes
 
 import android.os.Build
-import androidx.test.runner.AndroidJUnitRunner
 import com.vikram.domain.roomdatabase.MNRoomDatabase
 import com.vikram.domain.roomdatabase.models.Note
 import com.vikram.mynotes.usecases.AddNoteUseCase
@@ -21,22 +20,38 @@ class AddNoteUseCaseTest {
     @Inject
     lateinit var addNoteUseCase: AddNoteUseCase
     @Inject
-    lateinit var database : MNRoomDatabase
+    lateinit var database: MNRoomDatabase
 
     @Before
-    fun setup(){
+    fun setup() {
         val testComponent = DaggerTestComponent.create()
         testComponent.inject(this)
     }
 
     @Test
-    fun `test AddNoteUseCase`(){
-        val notesApp =  Note("Hello","Test",System.currentTimeMillis())
-       runBlocking {
-           addNoteUseCase.perform(notesApp)
-           val notes = database.noteDao().getAllNotes()
-           Assert.assertTrue(notes.isNotEmpty())
-       }
+    fun `test AddNoteUseCase`() {
+        val notesApp = Note("Hello", "Test", System.currentTimeMillis())
+        runBlocking {
+            addNoteUseCase.perform(notesApp)
+            val notes = database.noteDao().getAllNotes()
+            Assert.assertTrue(notes.isNotEmpty())
+        }
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `test AddNoteUseCase with empty title`() {
+        val notesApp = Note("", "Test", System.currentTimeMillis())
+        runBlocking {
+            addNoteUseCase.perform(notesApp)
+        }
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `test AddNoteUseCase with empty content`() {
+        val notesApp = Note("Hello", "", System.currentTimeMillis())
+        runBlocking {
+            addNoteUseCase.perform(notesApp)
+        }
     }
 
 }

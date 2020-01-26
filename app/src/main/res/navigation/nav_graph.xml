@@ -7,5 +7,16 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.vikram.mynotes.ui.home.HomeFragment"
-        android:label="@string/title_notes" />
+        android:label="@string/title_notes" >
+        <action
+            android:id="@+id/action_homeFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.vikram.mynotes.ui.addnote.AddNoteFragment"
+        android:label="@string/title_add_note"
+        />
+
 </navigation>
