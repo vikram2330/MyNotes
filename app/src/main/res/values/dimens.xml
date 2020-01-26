@@ -13,4 +13,5 @@
     <dimen name="width_progress_add_note_screen">24dp</dimen>
     <dimen name="height_progress_add_note_screen">24dp</dimen>
     <dimen name="btn_corner_radius">4dp</dimen>
+    <dimen name="size_0dp">0dp</dimen>
 </resources>
